@@ -1,1 +1,1 @@
-../../webterm/lib/mip.hoon
+../../landscape/lib/mip.hoon
