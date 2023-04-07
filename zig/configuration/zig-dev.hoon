@@ -58,7 +58,6 @@
   ;<  =bowl:strand  bind:m  get-bowl
   %:  setup-project:zig-threads
       request-id
-      :: !>(~)
       (make-desk-dependencies bowl)
       make-config
       make-virtualships-to-sync
@@ -186,7 +185,7 @@
   =/  args  !<((unit arg-mold) args-vase)
   ?~  args
     ~&  >>>  "Usage:"
-    ~&  >>>  "-zig!ziggurat-configuration-zig project-name=@t desk-name=@tas request-id=(unit @t)"
+    ~&  >>>  "-zig-dev!ziggurat-configuration-zig-dev project-name=@t desk-name=@tas request-id=(unit @t)"
     (pure:m !>(~))
   =.  project-name  project-name.u.args
   =.  desk-name     desk-name.u.args
