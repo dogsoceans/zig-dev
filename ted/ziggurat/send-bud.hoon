@@ -77,8 +77,8 @@
     %-  send-wallet-transaction:zig-threads
     :-  project-name
     :^  who  sequencer-host
-      !>(send-discrete-pyro-poke:zig-threads)
-    :-  project-name
+      !>(send-discrete-pyro-poke-then-sleep:zig-threads)
+    :+  ~s5  project-name
     :^  who  who  %uqbar
     :-  %wallet-poke
     !>  ^-  wallet-poke:w
