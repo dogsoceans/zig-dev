@@ -27,6 +27,7 @@
 ++  make-desk-dependencies
   |=  =bowl:strand
   ^-  desk-dependencies:zig
+  ::  REPLACE THIS ON DEPLOYMENT
   :_  ~
   [our.bowl %zig [%da now.bowl] ~]
 ::
