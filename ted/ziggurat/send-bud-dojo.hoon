@@ -75,12 +75,11 @@
   ~&  %zsb^%top^%0
   =*  address=@ux  (~(got by ship-to-address) who)
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who
+    %+  send-discrete-pyro-dojo:zig-threads  who
     %-  crip
     "=old-pending %~  key  by  .^((map @ux *) %gx /=wallet=/pending-store/{<address>}/noun)"
   ;<  empty-vase=vase  bind:m
-    %+  send-discrete-pyro-poke:zig-threads  project-name
+    %-  send-discrete-pyro-poke:zig-threads
     :^  who  who  %uqbar
     :-  %wallet-poke
     !>  ^-  wallet-poke:w
@@ -94,26 +93,21 @@
         amount=123.456  item=item
     ==
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who
+    %+  send-discrete-pyro-dojo:zig-threads  who
     %-  crip
     "=new-pending %~  key  by  .^((map @ux *) %gx /=wallet=/pending-store/{<address>}/noun)"
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who
+    %+  send-discrete-pyro-dojo:zig-threads  who
     '=diff-pending (~(dif in new-pending) old-pending)'
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who
+    %+  send-discrete-pyro-dojo:zig-threads  who
     '=tx-hash ?>  =(1 ~(wyt in diff-pending))  -.diff-pending'
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who
+    %+  send-discrete-pyro-dojo:zig-threads  who
     %-  crip
     ":uqbar &wallet-poke [%submit from={<address>} hash=tx-hash gas=[rate=1 bud=1.000.000]]"
   ;<  empty-vase=vase  bind:m
-    %^  send-discrete-pyro-dojo:zig-threads  project-name
-      sequencer-host
+    %+  send-discrete-pyro-dojo:zig-threads  sequencer-host
     ':sequencer|batch'
   (pure:m !>(`(each ~ @t)`[%.y ~]))
 --

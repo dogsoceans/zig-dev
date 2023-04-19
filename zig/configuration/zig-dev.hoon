@@ -80,8 +80,8 @@
     ^-  form:m
     =/  who=@p  ~nec
     ;<  empty-vase=vase  bind:m
-      %^  send-discrete-pyro-dojo:zig-threads  project-name
-      who  ':rollup|activate'
+      %+  send-discrete-pyro-dojo:zig-threads  who
+      ':rollup|activate'
     ;<  empty-vase=vase  bind:m
       %-  send-pyro-poke:zig-threads
       :^  who  who  %indexer
@@ -89,18 +89,15 @@
       !>(`action:ui`[%set-sequencer ~nec %sequencer])
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %indexer
       :-  %indexer-action
       !>(`action:ui`[%set-rollup ~nec %rollup])
     ;<  empty-vase=vase  bind:m
-      %^  send-discrete-pyro-dojo:zig-threads  project-name
-        who
+      %+  send-discrete-pyro-dojo:zig-threads  who
       %-  crip
       ":sequencer|init our {<town-id>} {<sequencer-address>}"
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %uqbar
       :-  %wallet-poke
       !>  ^-  wallet-poke:w
@@ -114,7 +111,6 @@
     ;<  ~  bind:m  (make-setup-chain-user who)
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %uqbar
       :-  %wallet-poke
       !>  ^-  wallet-poke:w
@@ -128,7 +124,6 @@
     ;<  ~  bind:m  (make-setup-chain-user who)
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %uqbar
       :-  %wallet-poke
       !>  ^-  wallet-poke:w
@@ -146,13 +141,11 @@
       !>(`action:ui`[%set-sequencer ~nec %sequencer])
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %indexer
       :-  %indexer-action
       !>(`action:ui`[%set-rollup ~nec %rollup])
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
-      :-  project-name
       :^  who  who  %indexer
       :-  %indexer-action
       !>(`action:ui`[%bootstrap ~nec %indexer])

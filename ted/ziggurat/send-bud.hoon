@@ -75,10 +75,9 @@
   ~&  %zsb^%top^%0
   ;<  empty-vase=vase  bind:m
     %-  send-wallet-transaction:zig-threads
-    :-  project-name
     :^  who  sequencer-host
       !>(send-discrete-pyro-poke-then-sleep:zig-threads)
-    :+  ~s5  project-name
+    :-  ~s5
     :^  who  who  %uqbar
     :-  %wallet-poke
     !>  ^-  wallet-poke:w
