@@ -87,18 +87,10 @@
     ^-  form:m
     =/  who=@p  ~nec
     ;<  empty-vase=vase  bind:m
-      %+  send-discrete-pyro-dojo:zig-threads  who
-      ':rollup|activate'
-    ;<  empty-vase=vase  bind:m
       %-  send-pyro-poke:zig-threads
       :^  who  who  %indexer
       :-  %indexer-action
-      !>(`action:ui`[%set-sequencer ~nec %sequencer])
-    ;<  empty-vase=vase  bind:m
-      %-  send-discrete-pyro-poke:zig-threads
-      :^  who  who  %indexer
-      :-  %indexer-action
-      !>(`action:ui`[%set-rollup ~nec %rollup])
+      !>(`action:ui`[%set-sequencer town-id ~nec %sequencer])
     ;<  empty-vase=vase  bind:m
       %+  send-discrete-pyro-dojo:zig-threads  who
       %-  crip
@@ -145,12 +137,7 @@
       %-  send-pyro-poke:zig-threads
       :^  who  who  %indexer
       :-  %indexer-action
-      !>(`action:ui`[%set-sequencer ~nec %sequencer])
-    ;<  empty-vase=vase  bind:m
-      %-  send-discrete-pyro-poke:zig-threads
-      :^  who  who  %indexer
-      :-  %indexer-action
-      !>(`action:ui`[%set-rollup ~nec %rollup])
+      !>(`action:ui`[%set-sequencer town-id ~nec %sequencer])
     ;<  empty-vase=vase  bind:m
       %-  send-discrete-pyro-poke:zig-threads
       :^  who  who  %indexer
