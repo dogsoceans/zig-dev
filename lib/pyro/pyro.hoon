@@ -1,1 +1,0 @@
-../../../dev-suite/lib/pyro/pyro.hoon
