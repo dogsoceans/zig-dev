@@ -3,6 +3,7 @@
     w=zig-wallet,
     zig=zig-ziggurat
 /+  strandio,
+    ziggurat-system-threads=zig-ziggurat-system-threads,
     ziggurat-threads=zig-ziggurat-threads
 ::
 =*  strand     strand:spider
@@ -14,6 +15,8 @@
 =|  project-name=@t
 =|  desk-name=@tas
 =|  ship-to-address=(map @p @ux)
+=*  zig-sys-threads
+  ~(. ziggurat-system-threads project-name desk-name)
 =*  zig-threads
   ~(. ziggurat-threads project-name desk-name ship-to-address)
 |%
@@ -62,7 +65,7 @@
   =/  m  (strand ,vase)
   ^-  form:m
   ;<  =bowl:strand  bind:m  get-bowl
-  %:  setup-project:zig-threads
+  %:  setup-project:zig-sys-threads
       repo-host
       request-id
       (make-repo-dependencies bowl)
