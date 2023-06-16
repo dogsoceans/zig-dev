@@ -1,3 +1,11 @@
+::  send-zigs-from-bud-to-wes-dojo.hoon:
+::  1. send ZIGs tokens from ~bud to ~wes
+::
+::  demonstrates the following functions provided by the
+::  zig-ziggurat-threads toolkit:
+::  1. +send-discrete-pyro-dojo
+::  2. +send-discrete-pyro-poke
+::
 /-  spider,
     w=zig-wallet,
     zig=zig-ziggurat
@@ -45,6 +53,10 @@
   ^-  @ux
   0x9c5a.605c.54a6.d30d.bdb7.0d6d.1b3d.d92e.5a38.6903.639e.06c6.9128.9b52.5358.b741
 ::
+++  send-amount
+  ^-  @ud
+  123.456
+::
 ++  get-ship-to-address
   =/  m  (strand ,(map @p @ux))
   ^-  form:m
@@ -63,7 +75,7 @@
   =/  args  !<((unit arg-mold) args-vase)
   ?~  args
     ~&  >>>  "Usage:"
-    ~&  >>>  "-zig!ziggurat-send-bud-dojo project-name=@t desk-name=@tas request-id=(unit @t)"
+    ~&  >>>  "-zig!ziggurat-send-zigs-from-bud-to-wes-dojo project-name=@t desk-name=@tas request-id=(unit @t)"
     (pure:m !>(~))
   =.  project-name  project-name.u.args
   =.  desk-name     desk-name.u.args
@@ -90,7 +102,7 @@
         town=town-id
     ::
         :^  %give  to=(~(got by ship-to-address) to)
-        amount=123.456  item=item
+        amount=send-amount  item=item
     ==
   ;<  empty-vase=vase  bind:m
     %+  send-discrete-pyro-dojo:zig-threads  who
@@ -108,6 +120,6 @@
     ":uqbar &wallet-poke [%submit from={<address>} hash=tx-hash gas=[rate=1 bud=1.000.000]]"
   ;<  empty-vase=vase  bind:m
     %+  send-discrete-pyro-dojo:zig-threads  sequencer-host
-    ':sequencer|batch'
+    '-zig!batch'
   (pure:m !>(`(each ~ @t)`[%.y ~]))
 --
